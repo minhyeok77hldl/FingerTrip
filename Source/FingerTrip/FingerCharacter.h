@@ -145,6 +145,14 @@ public:
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Game Clear")
     bool bHasGameEnded;
 
+
+    // --- 점프력 가속을 위한 변수 ---
+    UPROPERTY(EditAnywhere, Category = "Movement|Jump")
+    float DefaultJumpZVelocity; // 캐릭터의 원래 JumpZVelocity를 저장할 변수
+
+    UPROPERTY(EditAnywhere, Category = "Movement|Jump")
+    float MaxJumpZVelocityMultiplier; // 최대 속도일 때 JumpZVelocity의 최대 배율
+
 private:
     UPROPERTY(EditAnywhere, Category = "Game Clear")
     int32 MaxScore; // 레벨에 있는 총 코인의 수 (별 1, 2 조건)
@@ -161,11 +169,5 @@ private:
     void UpdateGameTimer(); // 매 초마다 호출될 타이머 함수
     FTimerHandle GameTimerHandle; // 타이머 핸들
 
-    // --- 점프력 가속을 위한 변수 ---
-    UPROPERTY(EditAnywhere, Category = "Movement|Jump")
-    float DefaultJumpZVelocity; // 캐릭터의 원래 JumpZVelocity를 저장할 변수
-
-    UPROPERTY(EditAnywhere, Category = "Movement|Jump")
-    float MaxJumpZVelocityMultiplier; // 최대 속도일 때 JumpZVelocity의 최대 배율
 
 };
